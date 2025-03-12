@@ -42,8 +42,15 @@ export const getTrendingMovies = async () => {
       Query.limit(10),
       Query.orderDesc("count"),
     ]);
+
+    if (!result || !result.documents || result.documents.length === 0) {
+      console.error("No trending movies found in database.");
+      return [];
+    }
+
     return result.documents;
   } catch (error) {
     console.error("Error fetching trending movies:", error);
+    return [];
   }
 };
