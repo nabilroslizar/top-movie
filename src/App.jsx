@@ -30,6 +30,7 @@ const App = () => {
   const fetchMovies = async (query = "") => {
     setIsLoading(true);
     setErrorMessage("");
+    console.log("TMDB API Key:", API_KEY);
 
     try {
       const endpoint = query
