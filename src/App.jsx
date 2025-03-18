@@ -30,12 +30,13 @@ const App = () => {
   const fetchMovies = async (query = "") => {
     setIsLoading(true);
     setErrorMessage("");
-    console.log("TMDB API Key:", API_KEY);
 
     try {
       const endpoint = query
-        ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
-        : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
+        ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(
+            query
+          )}&api_key=${API_KEY}`
+        : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
 
       const response = await fetch(endpoint, API_OPTIONS);
 
