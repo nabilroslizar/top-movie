@@ -63,7 +63,7 @@ const App = () => {
       }
     } catch (error) {
       console.error(`Error fetching movies: ${error}`);
-      setErrorMessage("Error fetching movies. Please try again later.");
+      setErrorMessage("Error fetching movies. Please try again later."); //error kat sini
     } finally {
       setIsLoading(false);
     }
